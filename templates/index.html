@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Faculty Timetable Allocator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header style="position: relative;">
+            <button id="theme-toggle" class="secondary-btn print-hide" style="position: absolute; top: 1rem; right: 1rem; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; font-size: 1.2rem; padding: 0;">🌙</button>
+            <h1>Faculty Timetable Generator</h1>
+            <p>Constraint Satisfaction Problem (CSP) & Graph Coloring</p>
+        </header>
+
+        <main>
+            <div class="input-section glassmorphism">
+                <!-- Data Entry Forms -->
+                
+                <div class="card">
+                    <h2>Subjects & Faculties</h2>
+                    <div class="row-headers grid-subjects">
+                        <div>Subject Name</div>
+                        <div>Faculty Name</div>
+                        <div>Subject Type</div>
+                        <div></div>
+                    </div>
+                    <div id="subjects-container">
+                        <!-- Default Row -->
+                    </div>
+                    <button id="add-sub-btn" class="secondary-btn add-btn">+ Add Subject</button>
+                </div>
+
+                <div class="card">
+                    <h2>Classrooms</h2>
+                    <div class="row-headers grid-rooms">
+                        <div>Room Name</div>
+                        <div>Room Type</div>
+                        <div>Capacity</div>
+                        <div></div>
+                    </div>
+                    <div id="rooms-container">
+                        <!-- Default Row -->
+                    </div>
+                    <button id="add-room-btn" class="secondary-btn add-btn">+ Add Room</button>
+                </div>
+
+                <div class="card">
+                    <h2>Time Slots</h2>
+                    <div class="row-headers grid-slots">
+                        <div>Day of Week</div>
+                        <div>Time Period</div>
+                        <div></div>
+                    </div>
+                    <div id="slots-container">
+                        <!-- Default Row -->
+                    </div>
+                    <button id="add-slot-btn" class="secondary-btn add-btn">+ Add Time Slot</button>
+                </div>
+
+            </div>
+
+            <div class="action-section">
+                <input type="file" id="csv-upload" accept=".csv" style="display: none;" />
+                <button id="upload-csv-btn" class="secondary-btn" style="padding: 1rem 2rem;">Upload Subjects (CSV)</button>
+                <button id="generate-btn" class="primary-btn">Generate Timetable</button>
+                <div id="loading" class="hidden">Running AI Core... <div class="spinner"></div></div>
+            </div>
+
+            <div class="output-section glassmorphism hidden" id="output-section">
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 2px solid #e2e8f0; margin-bottom: 1.5rem; padding-bottom: 0.75rem;">
+                    <h2 style="margin: 0; border: none; padding: 0;">Generated Timetable</h2>
+                    <div>
+                        <button class="secondary-btn print-hide" id="toggle-view-btn" style="margin-right: 0.5rem;">Calendar View</button>
+                        <button class="secondary-btn print-hide" onclick="window.print()">Export PDF</button>
+                    </div>
+                </div>
+                <div id="error-message" class="error hidden print-hide"></div>
+                <div id="calendar-container"></div>
+                <table id="schedule-table" class="hidden">
+                    <thead>
+                        <tr>
+                            <th>Subject</th>
+                            <th>Faculty</th>
+                            <th>Time Slot</th>
+                            <th>Room</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+                    <tbody id="schedule-body">
+                        <!-- Rows injected via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <script src="/static/js/script.js"></script>
+</body>
+</html>

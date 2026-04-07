@@ -1,0 +1,224 @@
+/* AI Premium Styling - Clear, Centered, Professional */
+body {
+    background-color: #f8fafc;
+    color: #1e293b;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1rem 2rem;
+}
+
+header h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: #0f172a;
+    letter-spacing: -0.05em;
+    margin: 0 0 0.5rem;
+    background: linear-gradient(135deg, #1d4ed8, #4f46e5, #9333ea, #1d4ed8);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 5s ease infinite, pulseGlow 3s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulseGlow {
+    0% { filter: drop-shadow(0 0 5px rgba(79, 70, 229, 0.2)); }
+    100% { filter: drop-shadow(0 0 20px rgba(79, 70, 229, 0.6)); }
+}
+
+header p {
+    color: #64748b;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 80px;
+}
+
+.glassmorphism {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.05), 0 10px 15px -3px rgba(0, 0, 0, 0.02);
+}
+
+.card {
+    background: #f8fafc;
+    border: 1px solid #f1f5f9;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.input-section h2 { 
+    margin-top: 0; 
+    margin-bottom: 1.5rem; 
+    font-size: 1.2rem; 
+    font-weight: 600; 
+    color: #334155;
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.input-row { display: grid; gap: 12px; margin-bottom: 12px; align-items: center; }
+.grid-subjects { grid-template-columns: 2fr 2fr 1.5fr 40px; }
+.grid-rooms { grid-template-columns: 2fr 1.5fr 1fr 40px; }
+.grid-slots { grid-template-columns: 2fr 2fr 40px; }
+
+input, select {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    box-sizing: border-box;
+    background: #ffffff;
+    color: #0f172a;
+    transition: all 0.2s;
+}
+input:focus, select:focus { 
+    border-color: #4f46e5; 
+    box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); 
+}
+
+button { 
+    font-family: inherit; 
+    font-weight: 600; 
+    border-radius: 8px; 
+    cursor: pointer; 
+    transition: all 0.2s; 
+    border: none; 
+}
+
+.primary-btn {
+    background: linear-gradient(135deg, #4f46e5, #3730a3);
+    color: white;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+}
+.primary-btn:hover { 
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px -2px rgba(79, 70, 229, 0.4);
+}
+
+.secondary-btn {
+    background: #ffffff;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+.secondary-btn:hover { 
+    background: #f8fafc; 
+    border-color: #94a3b8;
+}
+
+.secondary-btn.add-btn {
+    margin-top: 0.5rem;
+}
+
+.remove-btn {
+    background: #fee2e2; color: #ef4444; width: 40px; height: 40px; padding: 0;
+    display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 8px; font-size: 1.1rem;
+}
+.remove-btn:hover { background: #fca5a5; color: #b91c1c; }
+
+.row-headers {
+    display: grid; gap: 12px; margin-bottom: 8px; color: #64748b; font-weight: 600; font-size: 0.8rem; padding-left: 2px; text-transform: uppercase; letter-spacing: 0.05em;
+}
+
+.action-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 3.5rem 0;
+}
+
+/* Spinner */
+.spinner { border: 3px solid rgba(255,255,255,0.3); border-top: 3px solid white; border-radius: 50%; width: 20px; height: 20px; animation: spin 1s linear infinite; display: inline-block; vertical-align: middle; margin-left: 10px;}
+@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+.hidden { display: none !important; }
+
+/* Table */
+table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 2rem; border-radius: 12px; overflow: hidden; background: white; border: 1px solid #e2e8f0; }
+th, td { padding: 1.25rem 1rem; text-align: left; border-bottom: 1px solid #e2e8f0; color: #1e293b;}
+th { background: #f8fafc; font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.1em; color: #64748b;}
+
+.badge { padding: 0.35rem 0.85rem; border-radius: 9999px; font-size: 0.75rem; font-weight: 600; }
+.badge-theory { background: #e0e7ff; color: #3730a3; }
+.badge-lab { background: #fce7f3; color: #be185d; }
+
+/* Advanced UI Print & Calendar Features */
+@media print {
+    body { background: white; padding: 0; color: black; }
+    .input-section, .action-section, header, .print-hide, .remove-btn { display: none !important; }
+    .glassmorphism { box-shadow: none; border: none; padding: 0; background: transparent; }
+    .output-section { margin-top: 0; box-shadow: none; border: none; padding: 0; }
+    #calendar-container { gap: 4px; }
+    .cal-cell { page-break-inside: avoid; border: 1px solid #ccc; background: white;}
+    .cal-event, .cal-time, .cal-header { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+#calendar-container {
+    display: none;
+    grid-template-columns: 140px repeat(5, 1fr);
+    gap: 12px;
+    margin-top: 2rem;
+}
+#calendar-container.active { display: grid; }
+
+.cal-header {
+    background: #4f46e5; color: white; font-weight: 600; text-align: center;
+    padding: 1rem; border-radius: 8px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em;
+}
+.cal-time {
+    background: #f8fafc; color: #334155; font-weight: 600;
+    font-size: 0.85rem; display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; text-align: center; padding: 0.75rem; border: 1px solid #e2e8f0;
+}
+.cal-cell {
+    background: #ffffff; border: 1px dashed #cbd5e1;
+    border-radius: 8px; padding: 0.5rem; min-height: 100px; display: flex; flex-direction: column; gap: 8px;
+}
+.cal-event {
+    background: #ffffff; border-left: 4px solid #4f46e5; color: #1e293b;
+    padding: 0.75rem; font-size: 0.85rem; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); border-top: 1px solid #f1f5f9; border-right: 1px solid #f1f5f9; border-bottom: 1px solid #f1f5f9;
+}
+.cal-event.lab { border-left-color: #ec4899; }
+.cal-event.theory { border-left-color: #6366f1; }
+
+/* Dark Mode Overrides */
+[data-theme="dark"] body { background-color: #0f172a; color: #f8fafc; }
+[data-theme="dark"] h1, [data-theme="dark"] .input-section h2, [data-theme="dark"] th, [data-theme="dark"] .cal-time, [data-theme="dark"] .cal-event { color: #f8fafc; }
+[data-theme="dark"] .glassmorphism { background-color: #1e293b; border-color: #334155; box-shadow: 0 20px 40px rgba(0,0,0,0.5); }
+[data-theme="dark"] .card { background-color: #0f172a; border-color: #1e293b; }
+[data-theme="dark"] input, [data-theme="dark"] select { background-color: #1e293b; color: #f8fafc; border-color: #334155; }
+[data-theme="dark"] .secondary-btn { background-color: #1e293b; color: #f8fafc; border-color: #334155; }
+[data-theme="dark"] .secondary-btn:hover { background-color: #334155; border-color: #475569; }
+[data-theme="dark"] table, [data-theme="dark"] .cal-cell, [data-theme="dark"] th, [data-theme="dark"] td { background-color: #1e293b; border-color: #334155; }
+[data-theme="dark"] .cal-time { background-color: #0f172a; border-color: #334155; }
+[data-theme="dark"] .cal-event { background-color: #1e293b; border-top-color: #334155; border-right-color: #334155; border-bottom-color: #334155;}
+[data-theme="dark"] header h1 { background: linear-gradient(135deg, #60a5fa, #818cf8, #c084fc, #60a5fa); background-size: 300% 300%; -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;}
+[data-theme="dark"] header p { color: #94a3b8; }
