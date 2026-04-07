@@ -1,4 +1,3 @@
-# faculty-timetable-generator
 # Faculty Timetable Generator
 
 The Faculty Timetable Generator is an intelligent scheduling system designed to automatically generate faculty timetables without conflicts. The system uses Prolog for implementing constraint-based scheduling logic and Python Flask as the backend to integrate the logic with a web interface.
